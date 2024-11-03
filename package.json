@@ -1,6 +1,9 @@
 {
   "name": "@hajimalung/test",
   "version": "0.0.2",
+  "publishConfig": {
+    "directory":"dist/hajimalung/test-lib"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
