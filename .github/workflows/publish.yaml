@@ -13,7 +13,7 @@ jobs:
         with:
           ref: main
 
-      - run: cd project/hajimalung/test-lib
+      - run: cd projects/hajimalung/test-lib
 
       - name: Read and update package.json
         id: update_version
