@@ -8,3 +8,4 @@ jobs:
       - run: git branch
       - uses: actions/setup-node@v4
       - run: npm install
+      - run: npm run build-lib
