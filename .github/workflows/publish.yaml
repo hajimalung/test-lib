@@ -65,9 +65,11 @@ jobs:
         working-directory: dist
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH }}" >> .npmrc
 
-      - run: find . -name ".npmrc"
+      - name: checking npmrc file
         working-directory: dist
+        run: find . -name ".npmrc"
 
       # - run: npm run publish-lib
-      - run: npm publish --access=public
+      - name: publish to npm repository
         working-directory: dist
+        run: npm publish --access=public
