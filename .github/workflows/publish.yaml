@@ -56,4 +56,4 @@ jobs:
           git add package.json
           git commit -m "Update package version to $NEW_VERSION"
           git remote add origin git@github.com:hajimalung/test-lib.git
-          git push origin HEAD:main
+          git push
