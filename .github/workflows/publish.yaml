@@ -11,3 +11,5 @@ jobs:
       - run: npm run build-lib
       - name: create npm rc file
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH }}" >> .npmrc
+      - name: checking creeated npmrc file
+        run: ind . -name ".npmrc"
