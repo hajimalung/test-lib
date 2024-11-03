@@ -1,0 +1,8 @@
+name: npm publish
+on: push
+jobs:
+  publishtonpm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v4
+      - run: echo "git branch"
