@@ -5,32 +5,13 @@ on:
       - main
 
 jobs:
-  publishtonpm:
+  version_increment:
     runs-on: ubuntu-latest
     steps:
       - name: Checkour code
         uses: actions/checkout@v1
         with:
           ref: main
-
-      # - name: Setup Node
-      #   uses: actions/setup-node@v4
-
-      # - name: Installing Dependencies
-      #   run: npm install
-
-      # - name: Building library
-      #   run: npm run build-lib
-
-      # - name: navigating to dis folder
-      #   run: cd dist/hajimalung/test-lib
-
-      # - name: creating dot npmrc file
-      #   run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH }}" >> .npmrc
-
-      # - run: find . -name ".npmrc"
-
-      # - run: npm run publish-lib
 
       - name: Read and update package.json
         id: update_version
@@ -58,3 +39,22 @@ jobs:
           git add package.json
           git commit -m "Update package version to $NEW_VERSION" || echo "No changes to commit"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+
+      # - name: Setup Node
+      #   uses: actions/setup-node@v4
+
+      # - name: Installing Dependencies
+      #   run: npm install
+
+      # - name: Building library
+      #   run: npm run build-lib
+
+      # - name: navigating to dis folder
+      #   run: cd dist/hajimalung/test-lib
+
+      # - name: creating dot npmrc file
+      #   run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH }}" >> .npmrc
+
+      # - run: find . -name ".npmrc"
+
+      # - run: npm run publish-lib
