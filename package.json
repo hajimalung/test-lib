@@ -1,9 +1,9 @@
 {
   "name": "@hajimalung/test",
   "version": "0.0.9",
-  "main": "dist/hajimalung/test-lib/index.d.ts",
+  "main": "dist/index.d.ts",
   "files": [
-    "dist/hajimalung/test-lib/*"
+    "dist/*"
   ],
   "scripts": {
     "ng": "ng",
