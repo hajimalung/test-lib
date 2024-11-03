@@ -4,6 +4,9 @@
   "publishConfig": {
     "directory": "dist/hajimalung/test-lib"
   },
+  "files": [
+    "dist/hajimalung/test-lib"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
