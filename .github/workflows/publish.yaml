@@ -40,21 +40,28 @@ jobs:
           git commit -m "Update package version to $NEW_VERSION" || echo "No changes to commit"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
 
-      # - name: Setup Node
-      #   uses: actions/setup-node@v4
+  publistonpm:
+    needs: [version_increment]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkour code
+        uses: actions/checkout@v1
 
-      # - name: Installing Dependencies
-      #   run: npm install
+      - name: Setup Node
+        uses: actions/setup-node@v4
 
-      # - name: Building library
-      #   run: npm run build-lib
+      - name: Installing Dependencies
+        run: npm install
 
-      # - name: navigating to dis folder
-      #   run: cd dist/hajimalung/test-lib
+      - name: Building library
+        run: npm run build-lib
 
-      # - name: creating dot npmrc file
-      #   run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH }}" >> .npmrc
+      - name: navigating to dis folder
+        run: cd dist/hajimalung/test-lib
 
-      # - run: find . -name ".npmrc"
+      - name: creating dot npmrc file
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH }}" >> .npmrc
 
-      # - run: npm run publish-lib
+      - run: find . -name ".npmrc"
+
+      - run: npm run publish-lib
