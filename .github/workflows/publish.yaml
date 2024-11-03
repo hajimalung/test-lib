@@ -6,3 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: git branch
+      - uses: actions/setup-node@v4
