@@ -62,8 +62,11 @@ jobs:
       #   run: cd dist/hajimalung/test-lib
 
       - name: creating dot npmrc file
+        working-directory: dist
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH }}" >> .npmrc
 
       - run: find . -name ".npmrc"
+        working-directory: dist
 
       - run: npm run publish-lib
+        working-directory: dist
