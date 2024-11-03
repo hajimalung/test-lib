@@ -1,6 +1,6 @@
 {
   "name": "@hajimalung/test",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "index.d.ts",
   "files": [
     "dist/hajimalung/test-lib/*"
