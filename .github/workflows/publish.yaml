@@ -9,6 +9,7 @@ jobs:
       - uses: actions/setup-node@v4
       - run: npm install
       - run: npm run build-lib
+      - run: cd dist/hajimalung/test-lib
       - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH }}" >> .npmrc
       - run: find . -name ".npmrc"
       - run: npm run publish-lib
