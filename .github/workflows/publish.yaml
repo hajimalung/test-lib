@@ -4,5 +4,5 @@ jobs:
   publishtonpm:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v4
+      - uses: actions/checkout@v1
       - run: echo "git branch"
