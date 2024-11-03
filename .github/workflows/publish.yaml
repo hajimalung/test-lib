@@ -33,7 +33,7 @@ jobs:
           echo "New version: $NEW_VERSION"
 
           # Update package.json with the new version
-          jq --arg new_version "$NEW_VERSION" '.version = $new_version' package.json > tmp.json && mv tmp.json projects/hajimalung/test-lib/package.json
+          jq --arg new_version "$NEW_VERSION" '.version = $new_version' projects/hajimalung/test-lib/package.json > tmp.json && mv tmp.json projects/hajimalung/test-lib/package.json
       - name: Commit changes
         run: |
           git config user.name "github-actions"
