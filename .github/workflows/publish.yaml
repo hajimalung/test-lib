@@ -16,11 +16,10 @@ jobs:
       # - run: cd projects/hajimalung/test-lib
 
       - name: Read and update package.json
-        working-directory: projects/hajimalung/test-lib
         id: update_version
         run: |
           # Read the current version
-          CURRENT_VERSION=$(jq -r '.version' package.json)
+          CURRENT_VERSION=$(jq -r '.version' projects/hajimalung/test-lib/package.json)
           echo "Current version: $CURRENT_VERSION"
 
           # Split the version into components
@@ -34,7 +33,7 @@ jobs:
           echo "New version: $NEW_VERSION"
 
           # Update package.json with the new version
-          jq --arg new_version "$NEW_VERSION" '.version = $new_version' package.json > tmp.json && mv tmp.json package.json
+          jq --arg new_version "$NEW_VERSION" '.version = $new_version' package.json > tmp.json && mv tmp.json projects/hajimalung/test-lib/package.json
       - name: Commit changes
         run: |
           git config user.name "github-actions"
