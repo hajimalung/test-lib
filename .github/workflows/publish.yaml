@@ -16,6 +16,7 @@ jobs:
       # - run: cd projects/hajimalung/test-lib
 
       - name: Read and update package.json
+        working-directory: projects/hajimalung/test-lib
         id: update_version
         run: |
           # Read the current version
