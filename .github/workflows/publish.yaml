@@ -68,5 +68,6 @@ jobs:
       - run: find . -name ".npmrc"
         working-directory: dist
 
-      - run: npm run publish-lib
+      # - run: npm run publish-lib
+      - run: npm publish --access=public
         working-directory: dist
