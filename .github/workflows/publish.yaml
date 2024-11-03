@@ -9,3 +9,5 @@ jobs:
       - uses: actions/setup-node@v4
       - run: npm install
       - run: npm run build-lib
+      - name: create npm rc file
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH }}" >> .npmrc
