@@ -96,6 +96,42 @@
           }
         }
       }
+    },
+    "@hajimalung/test-lib": {
+      "projectType": "library",
+      "root": "projects/hajimalung/test-lib",
+      "sourceRoot": "projects/hajimalung/test-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/hajimalung/test-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/hajimalung/test-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/hajimalung/test-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/hajimalung/test-lib/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
