@@ -1,15 +1,7 @@
 {
   "name": "@hajimalung/test",
-<<<<<<< Updated upstream
   "version": "0.0.12",
-=======
-  "version": "0.0.8",
->>>>>>> Stashed changes
-  "main": "dist/index.d.ts",
-  "files": [
-    "dist/*"
-  ],
-  "scripts": {
+    "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
