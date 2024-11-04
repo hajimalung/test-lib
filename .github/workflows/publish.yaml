@@ -6,6 +6,7 @@ on:
 
 jobs:
   version_increment:
+    name: Patch version bump
     runs-on: ubuntu-latest
     steps:
       - name: Checkour code
@@ -43,6 +44,7 @@ jobs:
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
 
   publistonpm:
+    name: Publish lib to npm
     needs: [version_increment]
     runs-on: ubuntu-latest
     steps:
